@@ -1,10 +1,10 @@
-class Users::SessionsController < Devise:SessionController
+class Users::SessionsController < Devise::SessionsController
     respond_to :json
     
     private
     def respond_with(resource, _opts = {})
         render json: {
-            message: "You are logged in"
+            message: "You are logged in",
             user: current_user,
         }, status: :ok
     end

@@ -1,4 +1,4 @@
-class Users::RegistrationsController < Devise:RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
     respond_to :json
     
     private
@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise:RegistrationsController
 
     def register_success
         render json: {
-            message: "Signed up!"
+            message: "Signed up!",
             user: current_user,
         }, status: :ok
     end
